@@ -28,3 +28,33 @@ void drawText(const string& text, float x, float y)
         glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, text[i]);
     }
 }
+
+
+//Catch
+
+//catch
+
+
+
+void drawBasketball()
+{
+
+    glColor3f(1.0f, 1.0f, 0.0f);
+    glBegin(GL_POLYGON);
+    for (int i = 0; i < 30; i++)
+    {
+        float angle = 2.0f * PI * i / 30.0f;
+        glVertex2f(0.05f * cos(angle), 0.05f * sin(angle));
+    }
+    glEnd();
+    
+    //BallLines
+    glColor3f(0.0f, 0.0f, 0.0f);
+    glLineWidth(1.0);
+    glBegin(GL_LINES);
+    glVertex2f(0.0f, 0.05f);
+    glVertex2f(0.0f, -0.05f);
+    glVertex2f(-0.05f, 0.0f);
+    glVertex2f(0.05f, 0.0f);
+    glEnd();
+}
