@@ -34,27 +34,64 @@ void drawText(const string& text, float x, float y)
 
 //catch
 
+//catch
 
 
-void drawBasketball()
+void drawCatcher()
 {
-
-    glColor3f(1.0f, 1.0f, 0.0f);
-    glBegin(GL_POLYGON);
-    for (int i = 0; i < 30; i++)
-    {
-        float angle = 2.0f * PI * i / 30.0f;
-        glVertex2f(0.05f * cos(angle), 0.05f * sin(angle));
-    }
-    glEnd();
-    
-    //BallLines
+    //Stand
     glColor3f(0.0f, 0.0f, 0.0f);
+    glBegin(GL_QUADS);
+    glVertex2f(-0.015f, 0.04f);
+    glVertex2f(0.015f, 0.04f);
+    glVertex2f(0.015f, -0.15f);
+    glVertex2f(-0.015f, -0.15f);
+    glEnd();
+
+    //FrontSqure
+    glColor3f(1.0f, 0.0f, 0.0f);
+    glLineWidth(2.0);
+    glBegin(GL_LINE_LOOP);
+    glVertex2f(-0.07f, 0.18f);
+    glVertex2f(0.07f, 0.18f);
+    glVertex2f(0.07f, 0.06f);
+    glVertex2f(-0.07f, 0.06f);
+    glEnd();
+
+    //Line
+    glColor3f(1.0f, 0.0f, 0.0f);
+    glLineWidth(4.0);
+    glBegin(GL_LINES);
+    glVertex2f(-0.12f, 0.06f);
+    glVertex2f(0.12f, 0.06f);
+    glEnd();
+
+    //Net
+    glColor3f(1.0f, 1.0f, 1.0f);
     glLineWidth(1.0);
     glBegin(GL_LINES);
-    glVertex2f(0.0f, 0.05f);
-    glVertex2f(0.0f, -0.05f);
-    glVertex2f(-0.05f, 0.0f);
-    glVertex2f(0.05f, 0.0f);
+
+    glVertex2f(-0.10f, 0.06f);
+    glVertex2f(-0.06f, -0.08f);
+
+    glVertex2f(-0.06f, 0.06f);
+    glVertex2f(-0.036f, -0.08f);
+
+    glVertex2f(-0.02f, 0.06f);
+    glVertex2f(-0.012f, -0.08f);
+
+    glVertex2f(0.02f, 0.06f);
+    glVertex2f(0.012f, -0.08f);
+
+    glVertex2f(0.06f, 0.06f);
+    glVertex2f(0.036f, -0.08f);
+
+    glVertex2f(0.10f, 0.06f);
+    glVertex2f(0.06f, -0.08f);
+
+    //Horizontal line
+    glVertex2f(-0.08f, -0.01f);
+    glVertex2f(0.08f, -0.01f);
+
     glEnd();
 }
