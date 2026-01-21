@@ -173,3 +173,24 @@ void update(int value)
 
 
 }
+
+void keyboard(unsigned char key, int x, int y)
+{
+    if (key == '1') currentScene = CatchGame;
+    if (key == '2') currentScene = ShipAnimation;
+    if (key == 'm' || key == 'M') currentScene = Menu;
+
+    if (currentScene == CatchGame)
+    {
+        if (key == 'a' && catcherX > -0.8f) catcherX -= MoveSpeed;
+        if (key == 'd' && catcherX < 0.8f)  catcherX += MoveSpeed;
+        if ((key == 'r' || key == 'R') && gameOver)
+        {
+            gameOver = false;
+            score = 0;
+            objY = 1.1f;
+            catcherX = 0.0f;
+            objX = ((rand() % 160) - 80) / 100.0f;
+        }
+    }
+}
