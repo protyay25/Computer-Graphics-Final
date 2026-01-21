@@ -17,8 +17,6 @@ int shapeType = 0;
 bool gameOver = false;
 int score = 0;
 
-//Ship
-
 
 void drawText(const string& text, float x, float y)
 {
@@ -95,14 +93,6 @@ void drawCatcher()
 
     glEnd();
 }
-
-//ship
-
-//ship
-
-//ship
-
-//ship
 
 //ship
 
