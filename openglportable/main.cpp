@@ -16,3 +16,15 @@ float objY = 1.1f;
 int shapeType = 0;
 bool gameOver = false;
 int score = 0;
+
+//Ship
+
+
+void drawText(const string& text, float x, float y)
+{
+    glRasterPos2f(x, y);
+    for (int i = 0; i < text.length(); i++)
+    {
+        glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, text[i]);
+    }
+}
