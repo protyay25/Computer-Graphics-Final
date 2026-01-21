@@ -95,3 +95,58 @@ void drawCatcher()
 
     glEnd();
 }
+
+//ship
+
+//ship
+
+//ship
+
+//ship
+
+//ship
+
+void display()
+{
+    glClear(GL_COLOR_BUFFER_BIT);
+    glLoadIdentity();
+
+    if (currentScene == Menu)
+    {
+        glColor3f(1.0f, 1.0f, 1.0f);
+        drawText("--- MAIN Menu ---", -0.2f, 0.4f);
+        drawText("Press '1' for Catch Game", -0.3f, 0.1f);
+        drawText("Press '2' for Ship Animation", -0.3f, -0.1f);
+    }
+    else if (currentScene == CatchGame)
+    {
+        drawBackground();
+        if (!gameOver)
+        {
+            string scoreTxt = "Catch Score : " + to_string(score);
+            glColor3f(1.0f, 1.0f, 1.0f);
+            drawText(scoreTxt, -0.9f, 0.8f);
+            drawText("Press 'M' for Menu", -0.9f, 0.7f);
+
+            glPushMatrix();
+            glTranslatef(catcherX, -0.7f, 0);
+            drawCatcher();
+            glPopMatrix();
+
+            glPushMatrix();
+            glTranslatef(objX, objY, 0);
+            if (shapeType == 0) drawBottle();
+            else drawBasketball();
+            glPopMatrix();
+        }
+        else
+        {
+            glColor3f(1.0f, 1.0f, 1.0f);
+            drawText("GAME OVER", -0.15f, 0.0f);
+            drawText("Press 'R' to Restart or 'M' for Menu", -0.35f, -0.15f);
+        }
+    }
+
+//ship
+
+}
