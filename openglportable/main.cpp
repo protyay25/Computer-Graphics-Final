@@ -150,3 +150,26 @@ void display()
 //ship
 
 }
+
+void update(int value)
+{
+    if (currentScene == CatchGame && !gameOver)
+    {
+        objY -= FallingSpeed;
+        if (objY <= -0.58f && objY >= -0.72f)
+        {
+            if (objX >= catcherX - 0.15f && objX <= catcherX + 0.15f)
+            {
+                score++;
+                objY = 1.1f;
+                objX = ((rand() % 160) - 80) / 100.0f;
+                shapeType = rand() % 2;
+            }
+        }
+        if (objY < -1.0f) gameOver = true;
+    }
+
+    //ship
+
+
+}
